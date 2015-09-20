@@ -47,7 +47,9 @@ public class LogerSingleton {
 		Properties p = new Properties();
 		
 		try {
-			p.load(new FileInputStream("/home/camilo/WorkSpaces/lunaWorkspace3/IngWeb/src/secure/usuarios.properties"));
+			
+			//p.load(Configuration.class.getClassLoader().getResourceAsStream("usuarios.properties"));
+			p.load(new FileInputStream("/home/camilo/git/ucentral/IngWeb/src/usuarios.properties"));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -55,17 +57,9 @@ public class LogerSingleton {
 		}
 		
 		Collection<Entry<Object, Object>> usersList = p.entrySet();		
-		for (Entry<Object, Object> entry : usersList){
+		for (Entry<Object, Object> entry : usersList)
+			users.add( new User( (String) entry.getKey(), (String) entry.getValue() ) );
 			
-			
-			
-			String name = (String) entry.getKey();
-			String pass = (String) entry.getValue();
-			
-			users.add( new User( name, pass ) );
-			
-			
-		}
 	}
 	
 	public List<User> getUsers() {

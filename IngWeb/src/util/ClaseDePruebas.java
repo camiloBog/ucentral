@@ -8,6 +8,7 @@ public class ClaseDePruebas {
 		
 		System.out.println("Validando");
 
+		System.out.println("Respuesta:" + new Loger().validate("camilo", "11223") );
 		System.out.println("Respuesta:" + new Loger().validate("camilo", "1122") );
 		
 

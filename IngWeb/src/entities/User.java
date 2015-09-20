@@ -11,7 +11,7 @@ public class User {
 	
 	public User(String nombre, String password) {
 		this.nombre = nombre;
-		this.password = nombre;
+		this.password = password;
 	}
 
 	public String getNombre() {
