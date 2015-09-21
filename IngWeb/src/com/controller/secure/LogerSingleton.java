@@ -1,4 +1,4 @@
-package secure;
+package com.controller.secure;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -8,8 +8,9 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map.Entry;
 import java.util.Properties;
+import java.util.StringTokenizer;
 
-import entities.User;
+import com.model.entities.User;
 
 public class LogerSingleton {
 	
@@ -56,9 +57,19 @@ public class LogerSingleton {
 			e.printStackTrace();
 		}
 		
+		
+		
 		Collection<Entry<Object, Object>> usersList = p.entrySet();		
-		for (Entry<Object, Object> entry : usersList)
-			users.add( new User( (String) entry.getKey(), (String) entry.getValue() ) );
+		for (Entry<Object, Object> entry : usersList){
+			
+			StringTokenizer st = new StringTokenizer((String) entry.getValue(), "~");
+			
+			String name = (String) entry.getKey();
+			String pass = st.nextToken();
+			String profile = st.nextToken();
+			
+			users.add( new User( name, pass, profile ) );
+		}
 			
 	}
 	
