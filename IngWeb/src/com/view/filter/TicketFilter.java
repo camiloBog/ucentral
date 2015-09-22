@@ -48,7 +48,7 @@ public class TicketFilter implements Filter {
 			urlList.put( servletRequest.getRequestURL().toString(), 1 );
 			
 			//Se envia la lista al context
-			context.setAttribute( attribute, urlList) ;			
+			context.setAttribute( attribute, urlList) ;		
 		
 		}else{
 			
