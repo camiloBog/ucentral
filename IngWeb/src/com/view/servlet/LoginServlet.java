@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.controller.secure.Dispatcher;
 
@@ -31,10 +32,19 @@ public class LoginServlet extends HttpServlet {
 			
 		Dispatcher dispatcher = new Dispatcher(user, pass);
 		
+		//se crea una session
+		if( dispatcher.validate() ){
+			HttpSession session = request.getSession( true );
+			session.setAttribute( "TicketUsu", dispatcher.getSessionUsu() );
+		}
+		
+		/*
+		 *  Dirige el flujo del programa a la pantalla que
+		 *  corresponte al perfil del usuario.
+		 */
 		RequestDispatcher rd = getServletContext().
 				getRequestDispatcher( dispatcher.getWay() );
-		
-		
+
 		response.setContentType("text/html");
 		rd.include(request, response);
 		
