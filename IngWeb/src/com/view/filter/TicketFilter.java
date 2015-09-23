@@ -3,6 +3,7 @@ package com.view.filter;
 import java.io.IOException;
 import java.util.HashMap;
 
+import javax.servlet.DispatcherType;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -11,20 +12,37 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
+import javax.servlet.annotation.WebInitParam;
 import javax.servlet.http.HttpServletRequest;
 
 /**
  * Se encarga de realizar una auditoria
- * de la cantidad de veces que una URL ha sido accedida.
+ * de la cantidad de veces que una URL ha sido accedida
  */
-@WebFilter(filterName="/TicketFilter",urlPatterns="/*")
+@WebFilter(
+		filterName="/TicketFilter", urlPatterns="/*",
+		dispatcherTypes = {	
+			DispatcherType.REQUEST, 
+			DispatcherType.FORWARD,
+			DispatcherType.ASYNC,
+			DispatcherType.ERROR,
+			DispatcherType.INCLUDE
+		},
+		initParams = { 
+			@WebInitParam(name =  "msg", value = "FILTRO::: ") 
+		})
 public class TicketFilter implements Filter {
 	
 	private String attribute = "stats";
+	private FilterConfig filterConfig;
 
     public TicketFilter() {
     	
     }
+    
+    public void init(FilterConfig fConfig) throws ServletException {
+    	this.filterConfig = fConfig;
+	}
 
 	public void destroy() {
 		
@@ -38,6 +56,8 @@ public class TicketFilter implements Filter {
 		HttpServletRequest servletRequest = ( HttpServletRequest ) request;
 		ServletContext context = request.getServletContext();
 		
+		System.out.println( filterConfig.getInitParameter("msg") + servletRequest.getRequestURL() );
+		
 		HashMap<String, Integer> urlList;
 		
 		//Se inicia la lista
@@ -45,7 +65,7 @@ public class TicketFilter implements Filter {
 			
 			//Se llena la lista con Url
 			urlList = new HashMap<String, Integer>();
-			urlList.put( servletRequest.getRequestURL().toString(), 1 );
+			urlList.put( servletRequest.getRequestURI().toString(), 1 );
 			
 			//Se envia la lista al context
 			context.setAttribute( attribute, urlList) ;		
@@ -57,20 +77,15 @@ public class TicketFilter implements Filter {
 			
 			//Si la url no esta en la lista, se agrega
 			//Sino se incrementa
-			if( urlList.get( servletRequest.getRequestURL().toString() ) == null )
-				urlList.put( servletRequest.getRequestURL().toString(), 1 );
+			if( urlList.get( servletRequest.getRequestURI().toString() ) == null )
+				urlList.put( servletRequest.getRequestURI().toString(), 1 );
 			else
-				urlList.put( servletRequest.getRequestURL().toString(), 
-						urlList.get( servletRequest.getRequestURL().toString() + 1 ) );
+				urlList.put( servletRequest.getRequestURI().toString(), 
+						urlList.get( servletRequest.getRequestURI().toString() + 1 ) );
 			
 		}
 		
 		chain.doFilter(request, response);
-		
-	}
-
-
-	public void init(FilterConfig fConfig) throws ServletException {
 		
 	}
 

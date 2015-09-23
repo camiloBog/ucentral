@@ -1,4 +1,4 @@
-
+/*
 $(document).ready(function() {
 	
 	var $form = document.querySelectorAll('#signup-form')[0],
@@ -40,7 +40,8 @@ $(document).ready(function() {
 				$message._show('failure', msg);
 				$form.reset();
 			}else{
-				window.parent.document.getElementById('marco').src = "RegCliente.jsp";	
+				alert("-> "+msg)
+				window.location = 'HangarConfig.html';	
 			}
 			
 						
@@ -53,7 +54,7 @@ $(document).ready(function() {
 	
 });
 
-
+*/
 
 /*
 

@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>TicketSeller Login</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		
+		<link rel="stylesheet" href="assets/css/main.css" type="text/css"/>
+		<link rel="stylesheet" href="css/jquery-ui-1.10.4.custom.css" type="text/css" />
+		
+	</head>
+	<body>
+		<header id="header">
+			<img alt="logotipo" src="images/Logo_Blanco_Transp_mediana.png">			
+		</header>
+		<form id="signup-form" method="post" action="LoginServlet">
+			<label>Usuario</label><input type="text" name="user" id="user" placeholder="Usuario"/>
+			<label>Contraseña</label><input type="password" name="pass" id="pass" placeholder="Contraseña"/>
+			<input type="submit" value="Entrar"/>
+			<span class="message visible failure">Credenciales Erroneas</span>
+		</form>
+
+		<footer id="footer">
+			<ul class="copyright">
+				<li>&copy; TicketSeller.</li>
+				<li><a href="Ticket.html">Home</a></li>
+			</ul>
+		</footer>
+	</body>
+</html>

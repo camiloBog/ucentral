@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Eventually by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title>TicketSeller Login</title>
@@ -12,20 +7,16 @@
 		
 		<link rel="stylesheet" href="assets/css/main.css" type="text/css"/>
 		<link rel="stylesheet" href="css/jquery-ui-1.10.4.custom.css" type="text/css" />
-		
-		<script src="js/jquery-1.10.2.js"></script>
-		<script src="js/jquery-ui-1.10.4.custom.js"></script>
-		<script src="js/ticketSeller.js"></script>
-		
+
 	</head>
 	<body>
 		<header id="header">
 			<img alt="logotipo" src="images/Logo_Blanco_Transp_mediana.png">			
 		</header>
-		<form id="signup-form" method="post"><label></label>
+		<form id="signup-form" method="post" action="LoginServlet">
 			<label>Usuario</label><input type="text" name="user" id="user" placeholder="Usuario"/>
 			<label>Contraseña</label><input type="password" name="pass" id="pass" placeholder="Contraseña"/>
-			<input id="env" type="button" value="Entrar"/>
+			<input type="submit" value="Entrar"/>
 		</form>
 
 		<footer id="footer">
