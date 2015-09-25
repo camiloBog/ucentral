@@ -59,10 +59,10 @@
 
 			<!--  COFIGURACION DE PESTAÑAS -->
 			<ul id="myTab" class="nav nav-tabs" role="tablist">
-				<li role="presentation" class="active">
-					<a href="#aeropuertos" id="aeropuertos-tab" role="tab" data-toggle="tab" aria-controls="aeropuertos" aria-expanded="true">Aeropuertos</a></li>
+				<li role="presentation" class="active"><a href="#aeropuertos" id="aeropuertos-tab" role="tab" data-toggle="tab" aria-controls="aeropuertos" aria-expanded="true">Aeropuertos</a></li>
 				<li role="presentation" class="deactive"><a href="#clases" role="tab" id="clases-tab2" data-toggle="tab" aria-controls="clases" aria-expanded="false">Clases</a></li>
 				<li role="presentation" class="deactive"><a href="#aviones" role="tab" id="aviones-tab3" data-toggle="tab" aria-controls="aviones" aria-expanded="false">Aviones</a></li>
+				<li role="presentation" class="deactive"><a href="#sesiones" role="tab" id="sesiones-tab4" data-toggle="tab" aria-controls="sesiones" aria-expanded="false">Sesiones</a></li>
 			<!-- 
 				<li role="presentation" class="deactive"><a href="#usuarios" role="tab" id="usuarios-tab4" data-toggle="tab" aria-controls="usuarios" aria-expanded="false">Usuarios</a></li>
 			 -->
@@ -261,6 +261,15 @@
 			          </div>
 								
 				</div>
+				
+				<div role="tabpanel" class="tab-pane fade" id="sesiones" aria-labelledby="sesiones-tab4">
+					<div class="forma-config">
+						<form id="SessionWiew" action="SessionView" method="post">
+							<input type="submit" value="Ver Sesiones Activas" />
+						</form>
+					</div>
+				</div>
+				
 				
 			</div>
 		</div>
