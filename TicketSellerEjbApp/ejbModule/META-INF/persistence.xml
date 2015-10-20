@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="TicketSellerEjbApp" transaction-type="JTA">
+		<jta-data-source>jdbc/__PostgreLocal</jta-data-source>
+		<class>com.model.entities.Aeropuerto</class>
+		<class>com.model.entities.Avion</class>
+		<class>com.model.entities.Banco</class>
+		<class>com.model.entities.Ciudad</class>
+		<class>com.model.entities.Clase</class>
+		<class>com.model.entities.Estado</class>
+		<class>com.model.entities.Pais</class>
+		<class>com.model.entities.Perfil</class>
+		<class>com.model.entities.Reserva</class>
+		<class>com.model.entities.Sequence</class>
+		<class>com.model.entities.Tarifa</class>
+		<class>com.model.entities.Tipo</class>
+		<class>com.model.entities.Usuario</class>
+		<class>com.model.entities.Vuelo</class>
+		<properties>
+			<property name="eclipselink.target-database" value="PostgreSQL"/>
+		</properties>
+	</persistence-unit>
+</persistence>

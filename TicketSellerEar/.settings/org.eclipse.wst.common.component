@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="TicketSellerEar">
+        <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
+        <dependent-module archiveName="TicketSellerWebApp.war" deploy-path="/" handle="module:/resource/TicketSellerWebApp/TicketSellerWebApp">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="TicketSellerEjbApp.jar" deploy-path="/" handle="module:/resource/TicketSellerEjbApp/TicketSellerEjbApp">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="TicketSellerEjbAppClient.jar" deploy-path="/" handle="module:/resource/TicketSellerEjbAppClient/TicketSellerEjbAppClient">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>
