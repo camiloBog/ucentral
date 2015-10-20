@@ -88,3 +88,27 @@ input[type="email"] {
   margin: 4px 0 10px;
   border-bottom: 1px solid #d6d6d6;
 }
+
+.sesiones {
+	width: auto;
+	padding: 6px 15px;
+	margin: 8px 8px 0px 0px
+}
+
+
+.sesiones h3 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 3em;
+  text-align: center;
+  color: #ff6857;
+  text-transform: capitalize;
+  margin-bottom: 50px;
+}
+
+.HangarAdmin h3{
+    color: #9384d5;
+    font-family: "Ubuntu",sans-serif;
+    font-size: 3em;
+    text-align: center;
+    margin-top: 20px
+}

@@ -9,6 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpSessionContext;
+import javax.servlet.http.HttpSessionIdListener;
+
+import org.jboss.weld.context.http.HttpSessionContextImpl;
 
 import com.controller.secure.Dispatcher;
 
@@ -34,8 +38,10 @@ public class LoginServlet extends HttpServlet {
 		
 		//se crea una session
 		if( dispatcher.validate() ){
+			
 			HttpSession session = request.getSession( true );
 			session.setAttribute( "TicketUsu", dispatcher.getSessionUsu() );
+			
 		}
 		
 		/*

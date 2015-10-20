@@ -1,6 +1,5 @@
 package com.controller.secure;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -49,15 +48,14 @@ public class LogerSingleton {
 		
 		try {
 			
-			//p.load(Configuration.class.getClassLoader().getResourceAsStream("usuarios.properties"));
-			p.load(new FileInputStream("/home/camilo/git/ucentral/IngWeb/src/usuarios.properties"));
+			p.load(Thread.currentThread().getContextClassLoader().
+					getResourceAsStream("usuarios.properties"));
+
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		
 		
 		Collection<Entry<Object, Object>> usersList = p.entrySet();		
 		for (Entry<Object, Object> entry : usersList){
