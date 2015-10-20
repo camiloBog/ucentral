@@ -96,9 +96,8 @@
     <global-forwards>
         <!-- Default forward to "Welcome" action -->
         <!-- Demonstrates using index.jsp to forward -->
-        <forward
-            name="welcome"
-            path="/Welcome.do"/>
+        <forward name="welcome" path="/Welcome.do"/>
+        <forward name="ticket" path="/pages/Ticket.jsp"/>
     </global-forwards>
 
 
@@ -107,9 +106,8 @@
     <action-mappings>
             <!-- Default "Welcome" action -->
             <!-- Forwards to welcome.jsp -->
-        <action
-            path="/Welcome"
-            forward="/pages/welcome.jsp"/>
+        <action path="/Welcome" forward="/pages/welcome.jsp"/>
+        <action path="/Ticket" forward="/pages/Ticket.jsp"/>
 
     <!-- sample input and input submit actions
 

@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<%@page import="java.util.HashMap" %>
+<%@page import="java.util.Set" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,10 +11,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="ServletDePrueba" method="post">
-	Pais:
-		<input type="text" id="txt" name="txt">
-		<input type="submit" value="Enviar">
-	</form>
+<%
+HashMap<String,Integer> mapa=(HashMap<String,Integer>)application.getAttribute("stats");
+Set<String> conjunto=mapa.keySet();
+for (String clave :conjunto) {
+out.println("<p>pagina :" +clave +"=		visitas :"+mapa.get(clave)+"</p><br/>");
+}
+ %>
 </body>
 </html>

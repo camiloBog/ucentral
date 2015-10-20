@@ -1,0 +1,114 @@
+@CHARSET "UTF-8";
+
+
+.forma-config 
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+	width: auto;
+	color: #000;
+	outline: none;
+	font-size: 12px;
+	padding: 5px 7px;
+	border: none;
+	margin-bottom: 1em;
+	-webkit-appearance: none;
+	background: none;
+	border: 1px solid rgba(153, 153, 153, 1);
+	border-radius: 0.3em;
+	-webkit-border-radius: 0.3em;
+	-moz-border-radius: 0.3em;
+	-o-border-radius: 0.3em;
+	-ms-border-radius: 0.3em;
+	
+}
+
+.forma-config input[type="text"]:hover {
+	animation: focus 0.1s;
+	background-color: #f7f7f7;
+	border-color: #00e6b7;
+}
+
+.forma-config textarea {
+	resize: none;
+	width: 100%;
+	color: #000;
+	font-size: 17px;
+	outline: none;
+	padding: 18px 16px;
+	border: none;
+	min-height: 13em;
+	-webkit-appearance: none;
+	background: none;
+	border: 1px solid rgba(153, 153, 153, 1);
+	border-radius: 0.3em;
+	-webkit-border-radius: 0.3em;
+	-moz-border-radius: 0.3em;
+	-o-border-radius: 0.3em;
+	-ms-border-radius: 0.3em;
+}
+
+.forma-config input[type="submit"] {
+	border: none;
+	outline: none;
+	color: #fff;
+	background: #1cb495;
+	width: auto;
+	padding: 6px 15px;
+	font-size: 17px;
+	margin: 8px 8px 0px 0px;
+	-webkit-appearance: none;
+	border-radius: 0.3em;
+	-webkit-border-radius: 0.3em;
+	-moz-border-radius: 0.3em;
+	-o-border-radius: 0.3em;
+	-ms-border-radius: 0.3em;
+}
+
+.forma-config input[type="submit"]:hover {
+	/** background: #1fcaa7; **/
+	background: #9384d5;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+	-o-transition: 0.5s all;
+}
+
+.forma-config label {
+		
+		display: inline-block;
+		font-size: 0.9em;
+		font-weight: 700;
+		margin: 0 1em 1em 2em;
+	
+}
+
+.page-header {
+  margin: 4px 0 10px;
+  border-bottom: 1px solid #d6d6d6;
+}
+
+.sesiones {
+	width: auto;
+	padding: 6px 15px;
+	margin: 8px 8px 0px 0px
+}
+
+
+.sesiones h3 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 3em;
+  text-align: center;
+  color: #ff6857;
+  text-transform: capitalize;
+  margin-bottom: 50px;
+}
+
+.HangarAdmin h3{
+    color: #9384d5;
+    font-family: "Ubuntu",sans-serif;
+    font-size: 3em;
+    text-align: center;
+    margin-top: 20px
+}
