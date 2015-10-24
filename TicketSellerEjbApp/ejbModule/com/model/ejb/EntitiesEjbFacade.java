@@ -33,6 +33,7 @@ public abstract class EntitiesEjbFacade {
     }
 
 	public Object persist(Object object) {
+		System.out.println("PERSISTIENDO.... "+object.getClass());
 		em.persist(object);
 		return object;
 	}
@@ -51,5 +52,5 @@ public abstract class EntitiesEjbFacade {
     public List<Object> FindAll(Object object) {	
         return em.createNamedQuery(object.getClass() + ".findAll").getResultList();
     }
-
+	
 }

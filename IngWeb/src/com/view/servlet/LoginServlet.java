@@ -9,10 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.servlet.http.HttpSessionContext;
-import javax.servlet.http.HttpSessionIdListener;
-
-import org.jboss.weld.context.http.HttpSessionContextImpl;
 
 import com.controller.secure.Dispatcher;
 

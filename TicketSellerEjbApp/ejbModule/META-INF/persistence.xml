@@ -11,7 +11,6 @@
 		<class>com.model.entities.Pais</class>
 		<class>com.model.entities.Perfil</class>
 		<class>com.model.entities.Reserva</class>
-		<class>com.model.entities.Sequence</class>
 		<class>com.model.entities.Tarifa</class>
 		<class>com.model.entities.Tipo</class>
 		<class>com.model.entities.Usuario</class>

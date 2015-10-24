@@ -1,7 +1,9 @@
 package com.model.entities;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
 import java.util.List;
 
 
@@ -15,7 +17,8 @@ public class Banco implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@SequenceGenerator(name="entBanco", sequenceName="banco_seq", allocationSize = 1)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="entBanco")
 	@Column(name="id_banco")
 	private long idBanco;
 

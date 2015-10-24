@@ -1,7 +1,9 @@
 package com.model.entities;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
 import java.util.List;
 
 
@@ -15,7 +17,8 @@ public class Clase implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@SequenceGenerator(name="entClase", sequenceName="clase_seq", allocationSize = 1)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="entClase")
 	@Column(name="id_clase")
 	private long idClase;
 

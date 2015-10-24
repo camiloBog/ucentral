@@ -1,7 +1,9 @@
 package com.model.entities;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -16,7 +18,8 @@ public class Tipo implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@SequenceGenerator(name="entTipo", sequenceName="tipo_seq", allocationSize = 1)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="entTipo")
 	@Column(name="id_tipo")
 	private long idTipo;
 

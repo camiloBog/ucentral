@@ -15,7 +15,8 @@ public class Pais implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@SequenceGenerator(name="entPais", sequenceName="pais_seq", allocationSize = 1)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="entPais")
 	@Column(name="id_pais")
 	private long idPais;
 
@@ -26,6 +27,10 @@ public class Pais implements Serializable {
 	private List<Ciudad> ciudades;
 
 	public Pais() {
+	}
+	
+	public Pais(String nombre) {
+		this.nombre = nombre;
 	}
 
 	public long getIdPais() {

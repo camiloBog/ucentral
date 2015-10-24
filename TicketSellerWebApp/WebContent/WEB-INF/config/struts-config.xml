@@ -56,8 +56,12 @@
 -->
 
 <!-- ================================================ Form Bean Definitions -->
-
+    
     <form-beans>
+    
+    <form-bean name="LoginForm"
+            type="com.view.form.LoginForm" />
+            
     <!-- sample form bean descriptor for an ActionForm
         <form-bean
             name="inputForm"
@@ -97,7 +101,8 @@
         <!-- Default forward to "Welcome" action -->
         <!-- Demonstrates using index.jsp to forward -->
         <forward name="welcome" path="/Welcome.do"/>
-        <forward name="ticket" path="/pages/Ticket.jsp"/>
+        <forward name="Ticket" path="/Ticket.do"/>
+        <forward name="Login" path="/Login.do"/>
     </global-forwards>
 
 
@@ -108,6 +113,15 @@
             <!-- Forwards to welcome.jsp -->
         <action path="/Welcome" forward="/pages/welcome.jsp"/>
         <action path="/Ticket" forward="/pages/Ticket.jsp"/>
+        <action path="/Login" forward="/pages/Login.jsp"/>
+        
+        <action path="/LoginForm" name="LoginForm" validate="true" input="/pages/Login.jsp"
+            type="com.view.action.LoginAction"  >
+            <forward name="Admin" path="/pages/HangarAdmin.jsp" />
+            <forward name="Config" path="/pages/HangarConfig.jsp" />
+            <forward name="Costumer" path="/pages/Services.jsp" />
+            <forward name="Fail" path="/pages/index.jsp" />
+        </action>
 
     <!-- sample input and input submit actions
 
@@ -196,4 +210,3 @@
   </plug-in>
 
 </struts-config>
-

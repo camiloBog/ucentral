@@ -8,13 +8,13 @@
 		<title>TicketSeller Home</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="pages/assets/css/main.css" />
 	</head>
 	<body>
 
 		<!-- Header -->
 			<header id="header">
-				<img alt="logotipo" src="images/Logo_Blanco_Transp_mediana.png">				
+				<img alt="logotipo" src="pages/images/Logo_Blanco_Transp_mediana.png">				
 				<p>El lugar al que deseas llegar se encuentra a un par de clicks de distancia...</p>
 			</header>
 
@@ -31,9 +31,9 @@
 			<footer id="footer">
 				<ul class="copyright">
 					<li>&copy; TicketSeller.</li>
-					<li><a href="index.html">Hangar</a></li>
+					<li><a href="Login.do">Hangar</a></li>
 				</ul>
 			</footer>	
-			<script src="assets/js/main.js"></script>
+			<script src="pages/assets/js/main.js"></script>
 	</body>
 </html:html>
