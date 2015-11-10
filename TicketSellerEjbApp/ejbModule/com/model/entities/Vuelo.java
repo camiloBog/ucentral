@@ -8,9 +8,11 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-
 /**
- * The persistent class for the vuelo database table.
+ * Clase de persistencia para la tabla Vuelo de la base de datos.
+ * 
+ * @author camilo
+ * @version 1.0, Noviembre de 2015
  * 
  */
 @Entity

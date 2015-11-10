@@ -8,7 +8,10 @@ import java.util.List;
 
 
 /**
- * The persistent class for the perfil database table.
+ * Clase de persistencia para la tabla Perfil de la base de datos.
+ * 
+ * @author camilo
+ * @version 1.0, Noviembre de 2015
  * 
  */
 @Entity

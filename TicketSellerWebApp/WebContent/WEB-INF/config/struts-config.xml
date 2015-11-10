@@ -59,8 +59,8 @@
     
     <form-beans>
     
-    <form-bean name="LoginForm"
-            type="com.view.form.LoginForm" />
+    <form-bean name="LoginForm" type="com.view.form.LoginForm" />
+    <form-bean name="HangarConfigForm" type="com.view.form.HangarForm" />
             
     <!-- sample form bean descriptor for an ActionForm
         <form-bean
@@ -86,6 +86,7 @@
 <!-- ========================================= Global Exception Definitions -->
 
     <global-exceptions>
+    	
         <!-- sample exception handler
         <exception
             key="expired.password"
@@ -120,7 +121,12 @@
             <forward name="Admin" path="/pages/HangarAdmin.jsp" />
             <forward name="Config" path="/pages/HangarConfig.jsp" />
             <forward name="Costumer" path="/pages/Services.jsp" />
-            <forward name="Fail" path="/pages/index.jsp" />
+            <forward name="Fail" path="/pages/ErrorLogin.jsp" />
+        </action>
+        
+        <action path="/HangarConfigForm" name="HangarConfigForm" validate="true" input="/pages/HangarConfig.jsp"
+            type="com.view.action.HangarAction"  >
+            <forward name="Admin2" path="/pages/HangarAdmin.jsp" />
         </action>
 
     <!-- sample input and input submit actions

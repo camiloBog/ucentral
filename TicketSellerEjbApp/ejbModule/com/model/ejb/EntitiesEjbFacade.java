@@ -10,14 +10,29 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+/**
+ * 
+ * @author camilo
+ * @version 1.0, Noviembre de 2015
+ * 
+ */
 public abstract class EntitiesEjbFacade {
 	
 	@Resource
-	SessionContext sessionContext;
+	protected SessionContext sessionContext;
 
 	@PersistenceContext(unitName="TicketSellerEjbApp")
-	private EntityManager em;
+	protected EntityManager em;
 	
+	/**
+	 * Se encarga de generar el objeto Query dependiendo
+	 * de la cantida de objetos devueltos por la transaccion.
+	 * 
+	 * @param jpqlStmt		Query ejectado.
+	 * @param firstResult	Primer resultado.
+	 * @param maxResults	Resultado maximo.
+	 * @return				Objeto devuelto.
+	 */
 	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
     public Object queryByRange(String jpqlStmt, int firstResult,
                                int maxResults) {
@@ -32,25 +47,50 @@ public abstract class EntitiesEjbFacade {
         return query.getResultList();
     }
 
+	/**
+	 * Funcion generica para persistir las entidades.
+	 * 
+	 * @param object	Objeto a persistir.
+	 * @return			Objeto persistido.
+	 */
 	public Object persist(Object object) {
-		System.out.println("PERSISTIENDO.... "+object.getClass());
 		em.persist(object);
 		return object;
 	}
 
+	/**
+	 * Funcion generica para hacer update sobre
+	 * una entidad.
+	 * 
+	 * @param object	Entidad sobre la que se realiza el update
+	 * @return			Entidad sobre la que se realizo el uptdate
+	 */
 	public Object merge(Object object) {
 		return em.merge(object);
 	}
 
+	/**
+	 * Funcion generica para eliminar un registro.
+	 * 
+	 * @param object	Tipo de objeto del que se realizara la accion.
+	 * @param id		Identificador del registro que se eliminara.
+	 */
 	public void remove(Object object, Long id) {
 		object = em.find(object.getClass(), id);
         em.remove(object);
 	}
 	
+	/**
+	 * Funcion generica para traer todos los registros de una tabla
+	 * 
+	 * @param object	Tipo de objeto del que se realizara la accion.
+	 * @return			Lista del tipo de objetos solicitada.
+	 */
 	@SuppressWarnings("unchecked")
 	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
-    public List<Object> FindAll(Object object) {	
-        return em.createNamedQuery(object.getClass() + ".findAll").getResultList();
-    }
+	public List<Object> FindAll(Object object) {
+		return em.createNamedQuery(
+				object.getClass().getSimpleName() + ".findAll").getResultList();
+	}
 	
 }

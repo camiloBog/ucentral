@@ -6,9 +6,11 @@ import javax.persistence.*;
 
 import java.util.Date;
 
-
 /**
- * The persistent class for the reserva database table.
+ * Clase de persistencia para la tabla Reserva de la base de datos.
+ * 
+ * @author camilo
+ * @version 1.0, Noviembre de 2015
  * 
  */
 @Entity

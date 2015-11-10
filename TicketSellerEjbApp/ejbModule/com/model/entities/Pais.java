@@ -4,9 +4,11 @@ import java.io.Serializable;
 import javax.persistence.*;
 import java.util.List;
 
-
 /**
- * The persistent class for the pais database table.
+ * Clase de persistencia para la tabla Pais de la base de datos.
+ * 
+ * @author camilo
+ * @version 1.0, Noviembre de 2015
  * 
  */
 @Entity
