@@ -15,7 +15,10 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQuery(name="Banco.findAll", query="SELECT b FROM Banco b")
+@NamedQueries({
+	@NamedQuery(name="Banco.findAll", query="SELECT b FROM Banco b"),
+	@NamedQuery(name="Banco.findById", query="SELECT b FROM Banco b where b.idBanco = :id")
+})
 public class Banco implements Serializable {
 	private static final long serialVersionUID = 1L;
 

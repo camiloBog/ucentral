@@ -15,7 +15,10 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQuery(name="Perfil.findAll", query="SELECT p FROM Perfil p")
+@NamedQueries({
+	@NamedQuery(name="Perfil.findAll", query="SELECT p FROM Perfil p"),
+	@NamedQuery(name="Perfil.findById", query="SELECT p FROM Perfil p where p.idPerfil = :id")
+})
 public class Perfil implements Serializable {
 	private static final long serialVersionUID = 1L;
 

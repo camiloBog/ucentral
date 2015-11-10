@@ -1,5 +1,7 @@
 package com.model.ejb;
 
+import java.util.List;
+
 import javax.ejb.Remote;
 
 /**
@@ -10,5 +12,13 @@ import javax.ejb.Remote;
  */
 @Remote
 public interface CiudadEjbRemote extends EntitiesFacade{
+	
+	/**
+	 * Trae las ciudades que coinciden con un String
+	 * 
+	 * @param name	Nombre de la ciudad que se busca.
+	 * @return		Retorna la lista que coincide con la busqueda
+	 */	
+	public List<Object> findByName(String name);
 
 }

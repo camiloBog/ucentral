@@ -1,7 +1,9 @@
 package com.model.entities;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
 import java.util.List;
 
 /**
@@ -12,7 +14,10 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQuery(name="Pais.findAll", query="SELECT p FROM Pais p")
+@NamedQueries({
+	@NamedQuery(name="Pais.findAll", query="SELECT p FROM Pais p"),
+	@NamedQuery(name="Pais.findById", query="SELECT p FROM Pais p where p.idPais = :id")
+})
 public class Pais implements Serializable {
 	private static final long serialVersionUID = 1L;
 

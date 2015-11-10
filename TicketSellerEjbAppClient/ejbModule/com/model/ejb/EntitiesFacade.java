@@ -54,4 +54,17 @@ public interface EntitiesFacade {
 	 */
     public List<Object> FindAll(Object object);
     
+    /**
+     * Funcion generica para traer un registro de una tabla
+     * a partir del id.
+     * 
+     * @param object	Tipo de objeto del que se realizara la accion.
+     * @param id		Identificador del objeto
+     * @return			Objeto buscado
+     */
+    public Object FindById(Object object, Long id);
+    
 }
+
+
+

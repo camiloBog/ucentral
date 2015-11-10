@@ -8,11 +8,14 @@ import java.util.List;
 
 
 /**
- * The persistent class for the aeropuerto database table.
+ * The persistent class for the aeropuerto database table.  
  * 
  */
 @Entity
-@NamedQuery(name="Aeropuerto.findAll", query="SELECT a FROM Aeropuerto a")
+@NamedQueries({
+	@NamedQuery(name="Aeropuerto.findAll", query="SELECT a FROM Aeropuerto a"),
+	@NamedQuery(name="Aeropuerto.findById", query="SELECT a FROM Aeropuerto a where a.idAeropuerto = :id")
+})
 public class Aeropuerto implements Serializable {
 	private static final long serialVersionUID = 1L;
 

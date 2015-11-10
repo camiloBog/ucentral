@@ -1,6 +1,13 @@
 package com.model.ejb;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
+import javax.persistence.NoResultException;
+import javax.persistence.NonUniqueResultException;
+import javax.persistence.Query;
+
+import com.model.entities.Usuario;
 
 /**
  * 
@@ -18,5 +25,38 @@ public class AeropuertoEjb extends EntitiesEjbFacade implements AeropuertoEjbRem
     public AeropuertoEjb() {
 
     }
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Object> findByName(String name) {
+		
+		Query query = em.createNamedQuery("Usuario.findByName");
+        query.setParameter("name", name);
+
+        try {
+        	return query.getResultList();
+        } catch (NoResultException e) {
+            return null;
+        } catch (Exception e) {
+            return null;
+        }
+        
+	}
+
+	@Override
+	public Object findByCodIata(String iata) {
+		
+		Query query = em.createNamedQuery("Usuario.findByCodIata");
+        query.setParameter("iata", iata);
+
+        try {
+        	return (Usuario) query.getSingleResult();
+        } catch (NoResultException e) {
+            return null;
+        } catch (NonUniqueResultException e) {
+            return null;
+        }
+		
+	}
 
 }

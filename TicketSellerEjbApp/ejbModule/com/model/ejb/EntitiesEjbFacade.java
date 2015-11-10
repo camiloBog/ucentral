@@ -7,6 +7,7 @@ import javax.ejb.SessionContext;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
@@ -89,8 +90,34 @@ public abstract class EntitiesEjbFacade {
 	@SuppressWarnings("unchecked")
 	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
 	public List<Object> FindAll(Object object) {
-		return em.createNamedQuery(
-				object.getClass().getSimpleName() + ".findAll").getResultList();
+		
+		try {
+			return em.createNamedQuery(
+					object.getClass().getSimpleName() + ".findAll").getResultList();
+		} catch (NoResultException e) {
+			return null;
+		}
+		
+	}
+	
+	/**
+     * Funcion generica para traer un registro de una tabla
+     * a partir del id.
+     * 
+     * @param object	Tipo de objeto que se esta buscando.
+     * @param id		Identificador del objeto buscado.
+     * @return			Objeto entrontrado.
+     */
+	public Object FindById(Object object, Long id) {
+		
+		try {
+			return em.createNamedQuery(
+					object.getClass().getSimpleName() + ".findById")
+					.setParameter("id", id)
+					.getSingleResult();			
+		} catch (NoResultException e) {
+			return null;
+		}
 	}
 	
 }
