@@ -20,5 +20,12 @@ public interface CiudadEjbRemote extends EntitiesFacade{
 	 * @return		Retorna la lista que coincide con la busqueda
 	 */	
 	public List<Object> findByName(String name);
+	
+	/**
+	 * Trae las ciudades que coinciden con el idPais
+	 * @param	idPais identificador de pais de la ciudad
+	 * @return	Retorna la lista que coincide con la busqueda
+	 */
+	public List<Object> findByCountryId(long idPais);
 
 }

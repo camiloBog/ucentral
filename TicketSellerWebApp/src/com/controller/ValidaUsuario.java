@@ -9,7 +9,9 @@ import com.model.entities.Usuario;
 
 public class ValidaUsuario {
 	
-	UsuarioEjbRemote usuarioService = (UsuarioEjbRemote) ContextLoader.getContext("UsuarioEjb");
+	private Usuario usuario;
+	private UsuarioEjbRemote usuarioService = 
+			(UsuarioEjbRemote) ContextLoader.getContext("UsuarioEjb");
 
 	public ValidaUsuario() {
 		
@@ -18,7 +20,7 @@ public class ValidaUsuario {
 	public boolean valida(String user, String pass){
 		
 		try {
-			Usuario usuario = (Usuario) usuarioService.findByDocument( new BigInteger(user) );
+			usuario = (Usuario) usuarioService.findByDocument( new BigInteger(user) );
 			
 			if( null!=usuario && pass.equals( usuario.getPass() ))
 				return true;
@@ -30,5 +32,14 @@ public class ValidaUsuario {
 		return false;
 
 	}
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+	
 
 }

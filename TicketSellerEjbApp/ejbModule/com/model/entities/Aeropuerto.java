@@ -8,13 +8,18 @@ import java.util.List;
 
 
 /**
- * The persistent class for the aeropuerto database table.  
+ * Clase de persistencia para la tabla Banco de la base de datos.
+ * 
+ * @author camilo
+ * @version 1.0, Noviembre de 2015
  * 
  */
 @Entity
 @NamedQueries({
 	@NamedQuery(name="Aeropuerto.findAll", query="SELECT a FROM Aeropuerto a"),
-	@NamedQuery(name="Aeropuerto.findById", query="SELECT a FROM Aeropuerto a where a.idAeropuerto = :id")
+	@NamedQuery(name="Aeropuerto.findById", query="SELECT a FROM Aeropuerto a where a.idAeropuerto = :id"),
+	@NamedQuery(name="Aeropuerto.findByName", query="SELECT a FROM Aeropuerto a where a.nombre = :name"),
+	@NamedQuery(name="Aeropuerto.findByCodIata", query="SELECT a FROM Aeropuerto a where a.iata = :iata")
 })
 public class Aeropuerto implements Serializable {
 	private static final long serialVersionUID = 1L;

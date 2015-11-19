@@ -30,7 +30,7 @@ public class AeropuertoEjb extends EntitiesEjbFacade implements AeropuertoEjbRem
 	@Override
 	public List<Object> findByName(String name) {
 		
-		Query query = em.createNamedQuery("Usuario.findByName");
+		Query query = em.createNamedQuery("Aeropuerto.findByName");
         query.setParameter("name", name);
 
         try {
@@ -46,7 +46,7 @@ public class AeropuertoEjb extends EntitiesEjbFacade implements AeropuertoEjbRem
 	@Override
 	public Object findByCodIata(String iata) {
 		
-		Query query = em.createNamedQuery("Usuario.findByCodIata");
+		Query query = em.createNamedQuery("Aeropuerto.findByCodIata");
         query.setParameter("iata", iata);
 
         try {

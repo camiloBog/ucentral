@@ -17,7 +17,9 @@ import java.util.List;
 @Entity
 @NamedQueries({
 	@NamedQuery(name="Ciudad.findAll", query="SELECT c FROM Ciudad c"),
-	@NamedQuery(name="Ciudad.findById", query="SELECT c FROM Ciudad c where c.idCiudad = :id")
+	@NamedQuery(name="Ciudad.findById", query="SELECT c FROM Ciudad c where c.idCiudad = :id"),
+	@NamedQuery(name="Ciudad.findByName", query="SELECT c FROM Ciudad c where c.nombre = :name"),
+	@NamedQuery(name="Ciudad.findByCountryId", query="SELECT c FROM Ciudad c where c.pais = :idPais")
 })
 public class Ciudad implements Serializable {
 	private static final long serialVersionUID = 1L;

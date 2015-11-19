@@ -80,6 +80,24 @@
 					<div class="forma-config">
 						<html:form action="HangarConfigForm">
 						
+							
+							<label><bean:message key="config.aerop.country" /></label>
+							<html:select property="paises">
+								<html:optionsCollection property="paisesLista" 
+									label="nombre" value="idPais"/>
+							</html:select>
+							
+							<label><bean:message key="config.aerop.city" /></label>
+							<html:select property="ciudades">
+								<html:optionsCollection property="ciudadesLista" 
+									label="nombre" value="idCiudad"/>
+							</html:select>
+						
+							
+						
+						
+						
+						
 							<label><bean:message key="config.aerop.country" /></label>
 							<html:text property="country"></html:text>
 							<html:errors property="country" />

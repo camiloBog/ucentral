@@ -6,7 +6,6 @@ import javax.persistence.*;
 
 import java.util.List;
 
-
 /**
  * Clase de persistencia para la tabla Banco de la base de datos.
  * 

@@ -16,7 +16,8 @@ import java.util.List;
 @Entity
 @NamedQueries({
 	@NamedQuery(name="Pais.findAll", query="SELECT p FROM Pais p"),
-	@NamedQuery(name="Pais.findById", query="SELECT p FROM Pais p where p.idPais = :id")
+	@NamedQuery(name="Pais.findById", query="SELECT p FROM Pais p where p.idPais = :id"),
+	@NamedQuery(name="Pais.findByName", query="SELECT p FROM Pais p where p.nombre = :name")
 })
 public class Pais implements Serializable {
 	private static final long serialVersionUID = 1L;

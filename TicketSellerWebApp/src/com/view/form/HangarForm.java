@@ -1,11 +1,20 @@
 package com.view.form;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
+
+import com.model.ContextLoader;
+import com.model.ejb.CiudadEjbRemote;
+import com.model.ejb.PaisEjbRemote;
+import com.model.entities.Ciudad;
+import com.model.entities.Pais;
 
 public class HangarForm extends ActionForm {
 
@@ -15,7 +24,19 @@ public class HangarForm extends ActionForm {
 	private String city;
 	private String name;
 	private String iata;
-
+	
+	private String paises;
+	private List<Object> paisesLista = new ArrayList<Object>();
+	
+	private PaisEjbRemote paisService = 
+			(PaisEjbRemote) ContextLoader.getContext("PaisEjb");
+	
+	private String ciudades;
+	private List<Object> ciudadesLista = new ArrayList<Object>();
+	
+	private CiudadEjbRemote ciudadService = 
+			(CiudadEjbRemote) ContextLoader.getContext("CiudadEjb");
+	
 	public ActionErrors validate(ActionMapping mapping,
 			HttpServletRequest request) {	
 
@@ -69,7 +90,41 @@ public class HangarForm extends ActionForm {
 		this.iata = iata;
 	}
 
+	public String getPaises() {
+		return paises;
+	}
+
+	public void setPaises(String paises) {
+		this.paises = paises;
+	}
 	
+	public String getCiudades() {
+		return ciudades;
+	}
+
+	public void setCiudades(String ciudades) {
+		this.ciudades = ciudades;
+	}
+
+	public List<Object> getPaisesLista() {
+		paisesLista = paisService.FindAll(new Pais());
+		return paisesLista;
+	}
+
+	public void setPaisesLista(List<Object> paisesLista) {
+		this.paisesLista = paisesLista;
+	}
+
+	public List<Object> getCiudadesLista() {
+		//225
+		ciudadesLista = ciudadService.findByCountryId(new Long("225"));
+		return ciudadesLista;
+	}
+
+	public void setCiudadesLista(List<Object> ciudadesLista) {
+		this.ciudadesLista = ciudadesLista;
+	}
+
 	
 	
 }

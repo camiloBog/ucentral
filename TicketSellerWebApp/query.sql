@@ -1,1 +1,1 @@
-select * from pais
+select * from ciudad

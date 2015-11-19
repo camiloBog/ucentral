@@ -40,4 +40,19 @@ public class CiudadEjb extends EntitiesEjbFacade implements CiudadEjbRemote {
         
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Object> findByCountryId(long idPais) {
+		Query query = em.createNamedQuery("Ciudad.findByCountryId");
+        query.setParameter("idPais", idPais);
+
+        try {
+        	return query.getResultList();
+        } catch (NoResultException e) {
+            return null;
+        } catch (Exception e) {
+            return null;
+        }
+	}
+
 }

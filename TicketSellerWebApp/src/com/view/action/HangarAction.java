@@ -15,9 +15,12 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import com.controller.ValidaAeropuerto;
+import com.model.entities.Pais;
 import com.view.form.HangarForm;
 
 public class HangarAction extends Action {
+	
+	HangarForm forma = new HangarForm();
 	
 	public HangarAction() {
 		super();
@@ -27,9 +30,9 @@ public class HangarAction extends Action {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
 		
-		System.out.println("ENTRO AL ACTION hangar");
+				
+		System.out.println("*****************EJECUTA execute");;
 		
-		HangarForm forma = new HangarForm();
 		
 		ValidaAeropuerto valida = new ValidaAeropuerto();
 		valida.guardaAerop(forma.getCity(), forma.getCountry(), 
@@ -57,6 +60,8 @@ public class HangarAction extends Action {
 	
 	public void init(ServletConfig config) throws ServletException {
 
+		System.out.println("*****************EJECUTA INIT");
+
 	}
 
 	public void destroy() {
@@ -73,6 +78,7 @@ public class HangarAction extends Action {
 
 	public void service(ServletRequest request, ServletResponse response)
 			throws ServletException, IOException {
+		System.out.println("*****************EJECUTA service");
 	}
 
 }
