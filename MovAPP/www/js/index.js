@@ -1,5 +1,7 @@
 
 var app = {
+		
+
     // Application Constructor
     initialize: function() {
         this.bindEvents();
@@ -18,6 +20,7 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
     },
+    
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
@@ -32,3 +35,6 @@ var app = {
 };
 
 app.initialize();
+
+
+    

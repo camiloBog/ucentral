@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+   
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    	<script src="http://code.jquery.com/jquery-2.0.1.min.js"></script>
+    	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    	
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/index.js"></script>
+
+        <title>MovApp</title>
+    </head>
+    <body>
+
+		<div data-role="page" id="page-1" data-theme="a">
+			<div data-role="header" data-theme="a">
+				<a href="http://localhost:36172/index.html" id="button-1" data-rel="back" 
+					class="ui-btn ui-icon-back ui-btn-icon-left ui-mini ui-corner-all ui-btn-b">Volver</a>
+				<h1>Registro</h1>
+			</div>
+			<div data-role="content">
+			
+				<label for="name">*Primer Nombre:</label>
+				<input name="name" id="name1" data-clear-btn="true" data-mini="true" value="" placeholder="Ingrese su primer nombre" maxlength="40" autofocus="true" required="true" type="text"/>
+				
+				<label for="name">Segundo Nombre:</label>
+				<input name="name" id="name2" data-clear-btn="true" data-mini="true" value="" placeholder="Ingrese su segundo nombre" maxlength="40" autofocus="true" type="text"/>
+				
+				<label for="name">*Primer Apellido:</label>
+				<input name="name" id="apellido1" data-clear-btn="true" data-mini="true" value="" placeholder="Ingrese su primer apellido" maxlength="40" autofocus="true" required="true" type="text"/>
+				
+				<label for="name">Segundo apellido:</label>
+				<input name="name" id="apellido2" data-clear-btn="true" data-mini="true" value="" placeholder="Ingrese su segundo apellido" maxlength="40" autofocus="true" type="text"/>
+				
+				<label for="email">*e-mail:</label>
+				<input name="email" id="email" data-clear-btn="true" data-mini="true" value="" placeholder="Ingrese su e-mail" autofocus="true" required="true" type="email"/>
+				
+				<label for="nacimiento">*Fecha Nacimiento:</label>
+				<input name="nacimiento" id="nacimiento" data-clear-btn="true" data-mini="true" value="" placeholder="Fecha de Nacimiento" autofocus="true" required="true" type="date"/>
+				
+				<div class="ui-input-btn ui-btn ui-icon-arrow-r ui-btn-icon-left ui-mini ui-corner-all ui-btn-b">
+					Registrarse
+					<input data-enhanced="true" type="submit" value="Registrarse" id="btn_registro"/>
+				</div>
+				
+			</div>
+		</div>
+		
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+	
+    </body>
+</html>
